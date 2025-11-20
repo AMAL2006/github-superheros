@@ -1,22 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki des Super-Héros</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wonder Woman</title>
+
+  <style>
+    /* --------------------------
+       Styles généraux
+    --------------------------- */
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: #171d32;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffd166;
+      margin-bottom: 25px;
+    }
+
+    /* --------------------------
+       Portrait + infos rapides
+    --------------------------- */
+    .top {
+      display: flex;
+      gap: 20px;
+    }
+
+    .portrait {
+      width: 280px;
+      background: #1e2540;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .portrait img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .name {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #ffd166;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #bfc7d8;
+      font-size: 0.9rem;
+    }
+
+    /* --------------------------
+       Stats simples
+    --------------------------- */
+    .stats {
+      margin-top: 15px;
+    }
+
+    .stat {
+      margin-bottom: 10px;
+    }
+
+    .stat label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .bar {
+      background: #2e3550;
+      height: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ffd166, #ff7b7b);
+      width: 0%;
+    }
+
+    /* --------------------------
+       Section détails
+    --------------------------- */
+    .details {
+      flex: 1;
+      background: #1e2540;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      color: #ffd166;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .row span:first-child {
+      font-weight: bold;
+    }
+
+    .aliases span {
+      background: #2d3450;
+      padding: 5px 8px;
+      border-radius: 8px;
+      margin-right: 5px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    /* --------------------------
+       Liens vers autres héros
+    --------------------------- */
+    .links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      background: transparent;
+      border: 1px solid #ffd166;
+      border-radius: 8px;
+      color: #ffd166;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #ffd16633;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Wiki des Super-Héros</h1>
-    
-    <div id="hero-info">
 
-        <!-- Les données du héros s'afficheront ici -->
+<div class="container">
 
-        <a href="flash.html">Flash</a>
-         <a href="hulk.html">HULK</a>
+  <h1>Wonder Woman</h1>
 
+  <div class="top">
+
+    <!-- portrait -->
+    <div class="portrait">
+      <img src="wonderwoman.jpg" alt="Wonder Woman">
+
+      <div class="name">Wonder Woman</div>
+      <div class="subtitle">Diana Prince – Themyscira</div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat">
+          <label>Intelligence</label>
+          <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
+        </div>
+
+        <div class="stat">
+          <label>Force</label>
+          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="stat">
+          <label>Vitesse</label>
+          <div class="bar"><div class="bar-fill" style="width:79%"></div></div>
+        </div>
+
+        <div class="stat">
+          <label>Durabilité</label>
+          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="stat">
+          <label>Puissance</label>
+          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="stat">
+          <label>Combat</label>
+          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+
+      <div class="links">
+        <a class="btn" href="flash.html">Flash</a>
+        <a class="btn" href="hulk.html">Hulk</a>
+      </div>
     </div>
 
-    <script src="script-h.js"></script>
+    <!-- Part 2 : détails -->
+    <div class="details">
+      <div class="section">
+        <h2>Biographie</h2>
+        <div class="row"><span>Nom complet :</span> <span>Diana Prince</span></div>
+        <div class="row"><span>Alter-egos :</span> <span>Aucun</span></div>
+        <div class="row"><span>Éditeur :</span> <span>DC Comics</span></div>
+        <div class="row"><span>1ère apparition :</span> <span>All-Star Comics #8</span></div>
+        <div class="row"><span>Naissance :</span> <span>Themyscira</span></div>
+
+        <div class="aliases">
+          <span>Princess Diana</span>
+          <span>Princess of the Amazons</span>
+          <span>Goddess of Truth</span>
+          <span>Wondy</span>
+          <span>Wonder Girl</span>
+          <span>The Amazon Princess</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Apparence</h2>
+        <div class="row"><span>Genre :</span> <span>Female</span></div>
+        <div class="row"><span>Race :</span> <span>Amazon</span></div>
+        <div class="row"><span>Taille :</span> <span>183 cm</span></div>
+        <div class="row"><span>Poids :</span> <span>74 kg</span></div>
+        <div class="row"><span>Yeux :</span> <span>Blue</span></div>
+        <div class="row"><span>Cheveux :</span> <span>Black</span></div>
+      </div>
+
+      <div class="section">
+        <h2>Travail</h2>
+        <div class="row"><span>Occupation :</span> 
+          <span>Adventurer, Protectrice de Paradise Island</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Connexions</h2>
+        <div class="row"><span>Groupes :</span> 
+          <span>Justice League of America, Justice Society</span>
+        </div>
+        <div class="row"><span>Famille :</span> 
+          <span>Queen Hippolyta, Donna Troy</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
