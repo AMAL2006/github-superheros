@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash: Speed Force Run</title>
+    <link rel="stylesheet" href="styleGF.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="speed-meter">Vitesse: Mach 1</div>
+        <div id="score-board">Score: 0</div>
+        <div id="hero"></div>
+        <div id="ground"></div>
+        
+        <div id="game-over">
+            <h1>GAME OVER</h1>
+            <p>Tu as trébuché dans la Speed Force !</p>
+            <p id="final-score"></p>
+            <button onclick="resetGame()">Courir à nouveau</button>
+        </div>
+    </div>
+
+    <script src="scriptF.js" defer></script>
+</body>
+</html>
