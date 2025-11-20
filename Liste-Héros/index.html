@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Super-Héros</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h1>Annuaire des Super-Héros</h1>
+
+    <input type="text" id="searchBar" placeholder="Rechercher un héros..." onkeyup="searchHeroes()">
+
+    <h3>Ajouter un héros</h3>
+    <form id="addHeroForm">
+        <input type="text" id="inputName" placeholder="Nom du Super-Héros" required>
+        <input type="text" id="inputAlterEgo" placeholder="Alter Ego (Identité secrète)" required>
+        <input type="text" id="inputPublisher" placeholder="Éditeur (ex: Marvel)" required>
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <div id="loader">Chargement des données...</div>
+    <div id="heroesList"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
