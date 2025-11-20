@@ -1,155 +1,30 @@
-        const hero = document.getElementById('hero');
-        const gameContainer = document.getElementById('game-container');
-        const scoreDisplay = document.getElementById('score-board');
-        const speedDisplay = document.getElementById('speed-meter');
-        const gameOverScreen = document.getElementById('game-over');
+// ========================================
+// 🎯 INSTRUCTIONS
+// ========================================
+// 1. Changez l'ID du héros ci-dessous
+// 2. Personnalisez l'affichage HTML
+// 3. Ajoutez du CSS dans index.html si vous voulez
+// 4. Faites des commits réguliers !
+// ========================================
 
-        let isJumping = false;
-        let score = 0;
-        let gameSpeed = 5; 
-        let gravity = 0.9;
-        let isGameOver = false;
-        let obstacleTimer;
-        let obstacles = [];
-        
-       
-        document.addEventListener('keydown', function(event) {
-            if ((event.code === 'Space' || event.code === 'ArrowUp') && !isJumping && !isGameOver) {
-                jump();
-            }
-        });
+const heroId = 263; // 👈 CHANGEZ CET ID !
 
-        function jump() {
-            isJumping = true;
-            let position = 0;
-            
-            
-            let upInterval = setInterval(() => {
-                if (position >= 150) { 
-                    clearInterval(upInterval);
-                    
-                    let downInterval = setInterval(() => {
-                        if (position <= 0) {
-                            clearInterval(downInterval);
-                            isJumping = false;
-                            position = 0;
-                        } else {
-                            position -= 5;
-                            hero.style.bottom = (50 + position) + 'px';
-                        }
-                    }, 20);
-                } else {
-                    position += 10; 
-                    hero.style.bottom = (50 + position) + 'px';
-                }
-            }, 20);
-        }
+// Liste des IDs disponibles :
+// Spider-Man: 620, Batman: 70, Iron Man: 346, Superman: 644
+// Wonder Woman: 720, Hulk: 332, Thor: 659, Flash: 263
+const myToken = ""; // Ajoutez le token donné dans le cours
+const apiUrl = `https://superheroapi.com/api.php/6570e44801f81594f8a913d3e21be5ab/${heroId}`;
 
-        function createObstacle() {
-            if (isGameOver) return;
+// Récupérer les données du héros avec fetch()
+// et les afficher grâce à Javascript dans le HTML de cette manière :
 
-            const obstacle = document.createElement('div');
-            obstacle.classList.add('obstacle');
-            obstacle.style.left = '800px'; 
-            gameContainer.appendChild(obstacle);
-            obstacles.push(obstacle);
+{{/* <h2>${data.name}</h2>
+<img src="${heroImageUrl}" alt="${data.name}" height="200">
+<p><strong>Nom complet :</strong> ${data.biography['full-name']}</p>
+<p><strong>Éditeur :</strong> ${data.biography.publisher}</p>
+<p><strong>Intelligence :</strong> ${data.powerstats.intelligence}/100</p>
+<p><strong>Force :</strong> ${data.powerstats.strength}/100</p> */}}
 
-           
-            let randomTime = Math.random() * 2000 + (10000 / (gameSpeed * 2)); 
-            obstacleTimer = setTimeout(createObstacle, randomTime);
-        }
+// utilisez heroImageUrl = "https://corsproxy.io/?" + encodeURIComponent(data.image.url);
 
-        function updateGame() {
-            if (isGameOver) return;
-
-            
-            score++;
-            scoreDisplay.innerText = "Score: " + Math.floor(score / 10);
-            
-            
-            if (score % 500 === 0) {
-                gameSpeed += 1;
-                speedDisplay.innerText = "Vitesse: Mach " + (gameSpeed - 4);
-                
-                hero.style.boxShadow = `-5px 0 ${10 + gameSpeed}px #ffd700, -10px 0 ${20 + gameSpeed}px #e70000`;
-            }
-
-            
-            if (score % 5 === 0) createTrail();
-
-           
-            obstacles.forEach((obs, index) => {
-                let obsLeft = parseInt(window.getComputedStyle(obs).getPropertyValue("left"));
-
-                if (obsLeft < -30) {
-                 
-                    obs.remove();
-                    obstacles.splice(index, 1);
-                } else {
-                  
-                    obs.style.left = (obsLeft - gameSpeed) + 'px'; 
-
-
-                    let heroBottom = parseInt(window.getComputedStyle(hero).getPropertyValue("bottom"));
-                    let heroLeft = 50; 
-
-                    
-                    if (obsLeft < heroLeft + 40 && obsLeft > heroLeft && heroBottom < 100) {
-                        gameOver();
-                    }
-                }
-            });
-
-            requestAnimationFrame(updateGame);
-        }
-
-        function createTrail() {
-            const trail = document.createElement('div');
-            trail.classList.add('trail');
-            trail.style.left = (50 - gameSpeed) + 'px';
-            trail.style.bottom = hero.style.bottom;
-            trail.style.opacity = 0.5;
-            gameContainer.appendChild(trail);
-
-        
-            let fadeEffect = setInterval(function () {
-                if (!trail.style.opacity) {
-                    trail.style.opacity = 0.5;
-                }
-                if (trail.style.opacity > 0) {
-                    trail.style.opacity -= 0.1;
-                    trail.style.left = (parseInt(trail.style.left) - gameSpeed) + 'px';
-                } else {
-                    clearInterval(fadeEffect);
-                    trail.remove();
-                }
-            }, 50);
-        }
-
-        function gameOver() {
-            isGameOver = true;
-            clearTimeout(obstacleTimer);
-            document.getElementById('final-score').innerText = "Score Final: " + Math.floor(score / 10);
-            gameOverScreen.style.display = 'block';
-        }
-
-        function resetGame() {
-
-            obstacles.forEach(obs => obs.remove());
-            obstacles = [];
-            const trails = document.querySelectorAll('.trail');
-            trails.forEach(t => t.remove());
-
-            isGameOver = false;
-            score = 0;
-            gameSpeed = 5;
-            gameOverScreen.style.display = 'none';
-            speedDisplay.innerText = "Vitesse: Mach 1";
-            
-            createObstacle();
-            updateGame();
-        }
-
-
-        createObstacle();
-        updateGame();
+// N'oubliez pas de gérer les erreurs (avec .catch())
