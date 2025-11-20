@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wonder Woman</title>
+  <title>Héros</title>
 
   <style>
-    /* --------------------------
-       Styles généraux
-    --------------------------- */
     body {
       font-family: Arial, sans-serif;
       background: #0b1020;
@@ -34,9 +31,6 @@
       margin-bottom: 25px;
     }
 
-    /* --------------------------
-       Portrait + infos rapides
-    --------------------------- */
     .top {
       display: flex;
       gap: 20px;
@@ -68,9 +62,6 @@
       font-size: 0.9rem;
     }
 
-    /* --------------------------
-       Stats simples
-    --------------------------- */
     .stats {
       margin-top: 15px;
     }
@@ -98,9 +89,6 @@
       width: 0%;
     }
 
-    /* --------------------------
-       Section détails
-    --------------------------- */
     .details {
       flex: 1;
       background: #1e2540;
@@ -136,147 +124,18 @@
       display: inline-block;
       margin-bottom: 5px;
     }
-
-    /* --------------------------
-       Liens vers autres héros
-    --------------------------- */
-    .links {
-      margin-top: 10px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn {
-      padding: 8px 12px;
-      background: transparent;
-      border: 1px solid #ffd166;
-      border-radius: 8px;
-      color: #ffd166;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-     .btn2 {
-      padding: 8px 12px;
-      background: transparent;
-      border: 1px solid #45d758;
-      border-radius: 8px;
-      color: #45d758;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-   
   </style>
 </head>
 
 <body>
-
-<div class="container">
-
-  <h1>Wonder Woman</h1>
-
-  <div class="top">
-
-    <!-- portrait -->
-    <div class="portrait">
-      <img src="wonderwoman.jpg" alt="Wonder Woman">
-
-      <div class="name">Wonder Woman</div>
-      <div class="subtitle">Diana Prince – Themyscira</div>
-
-      <!-- Stats -->
-      <div class="stats">
-        <div class="stat">
-          <label>Intelligence</label>
-          <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
-        </div>
-
-        <div class="stat">
-          <label>Force</label>
-          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-
-        <div class="stat">
-          <label>Vitesse</label>
-          <div class="bar"><div class="bar-fill" style="width:79%"></div></div>
-        </div>
-
-        <div class="stat">
-          <label>Durabilité</label>
-          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-
-        <div class="stat">
-          <label>Puissance</label>
-          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-
-        <div class="stat">
-          <label>Combat</label>
-          <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-      </div>
-
-      <div class="links">
-        <a class="btn" href="flash.html">Flash</a>
-        <a class="btn2" href="hulk.html">Hulk</a>
-      </div>
+  <div class="container">
+    <h1 id="hero-name">Héros</h1>
+    <div class="top">
+      <div class="portrait" id="hero-portrait"></div>
+      <div class="details" id="hero-details"></div>
     </div>
-
-    <!-- Part 2 : détails -->
-    <div class="details">
-      <div class="section">
-        <h2>Biographie</h2>
-        <div class="row"><span>Nom complet :</span> <span>Diana Prince</span></div>
-        <div class="row"><span>Alter-egos :</span> <span>Aucun</span></div>
-        <div class="row"><span>Éditeur :</span> <span>DC Comics</span></div>
-        <div class="row"><span>1ère apparition :</span> <span>All-Star Comics #8</span></div>
-        <div class="row"><span>Naissance :</span> <span>Themyscira</span></div>
-
-        <div class="aliases">
-          <span>Princess Diana</span>
-          <span>Princess of the Amazons</span>
-          <span>Goddess of Truth</span>
-          <span>Wondy</span>
-          <span>Wonder Girl</span>
-          <span>The Amazon Princess</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Apparence</h2>
-        <div class="row"><span>Genre :</span> <span>Female</span></div>
-        <div class="row"><span>Race :</span> <span>Amazon</span></div>
-        <div class="row"><span>Taille :</span> <span>183 cm</span></div>
-        <div class="row"><span>Poids :</span> <span>74 kg</span></div>
-        <div class="row"><span>Yeux :</span> <span>Blue</span></div>
-        <div class="row"><span>Cheveux :</span> <span>Black</span></div>
-      </div>
-
-      <div class="section">
-        <h2>Travail</h2>
-        <div class="row"><span>Occupation :</span> 
-          <span>Adventurer, Protectrice de Paradise Island</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Connexions</h2>
-        <div class="row"><span>Groupes :</span> 
-          <span>Justice League of America, Justice Society</span>
-        </div>
-        <div class="row"><span>Famille :</span> 
-          <span>Queen Hippolyta, Donna Troy</span>
-        </div>
-      </div>
-
-      
-    </div>
-
   </div>
-</div>
 
+  <script src="script-WonderWoman.js"></script>
 </body>
 </html>
