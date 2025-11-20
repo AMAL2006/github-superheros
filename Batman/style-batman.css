@@ -1,0 +1,58 @@
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000000;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+
+  margin: 0;
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 40px;
+  text-align: center;
+  font-family: Georgia, serif;
+
+  margin: 0;
+  padding: 20px 0;
+  color: #ffd900;
+  text-shadow: 1px 1px 2px rgb(80, 75, 75);
+}
+
+p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 2;
+  font-family: Georgia, serif;
+  width: 500px;
+  
+  padding-left: 35px;
+  background-color: rgb(50, 48, 48);
+  border-radius: 5%;
+}
+
+strong {
+  color: #ffd900;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #030001;
+  padding: 0 20px 20px 20px;
+  border: 5px solid #000000;
+}
+
+#hero-info { 
+  border-radius: 5%;
+  border-color: #ffd900; 
+  border-style: dashed; 
+  padding: 30px; 
+  text-align: center;
+} 
