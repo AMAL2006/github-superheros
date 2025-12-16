@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Superwoman",
+    "power": "Vol, force surhumaine",
+    "city": "Metropolis"
+  },
+  {
+    "id": 2,
+    "name": "Batman",
+    "power": "Intelligence, gadgets",
+    "city": "Gotham"
+  },
+  {
+    "id": 3,
+    "name": "Spider-Man",
+    "power": "Toile, sens d'araignée",
+    "city": "New York"
+  }
+]

@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki des Super-Héros</title>
+    <title>Mini-Projet Héros</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <h1>Wiki des Super-Héros</h1>
+
+    <h1> Gestionnaire de Héros Local</h1>
+
+    <section>
+        <h2> Ajouter un Nouveau Héros</h2>
+        <form id="addHeroForm"> 
+            <input type="text" id="heroName" placeholder="Nom du Héros" required>
+            <input type="text" id="heroPower" placeholder="Pouvoir principal" required>
+            <input type="text" id="heroCity" placeholder="Ville d'origine" required>
+            <button type="submit">Ajouter à la liste</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2> Liste des Héros</h2>
+        <input type="text" id="searchHeroInput" placeholder="Rechercher par nom, pouvoir ou ville...">
+    </section>
     
-    <div id="hero-info">
-
-        <!-- Les données du héros s'afficheront ici -->
-
-        <a href="flash.html">Flash</a>
-         <a href="hulk.html">HULK</a>
-
+    <div id="heroesList">
+        <p>Chargement des héros...</p> 
     </div>
 
-    <script src="script-h.js"></script>
+    <script src="script-h.js"></script> 
+
 </body>
 </html>

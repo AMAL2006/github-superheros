@@ -1,0 +1,94 @@
+/* =========================================================
+   STYLE GÉNÉRAL
+   ========================================================= */
+body {
+    /* Fond sombre pour un thème 'dark' */
+    font-family: Arial, sans-serif;
+    background-color: #121212; 
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    /* Couleur vive pour les titres (souvent utilisée pour l'accentuation) */
+    color: #ffd166; 
+}
+
+/* =========================================================
+   STYLES DES FORMULAIRES ET INPUTS
+   ========================================================= */
+input, button {
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box; /* Assure que le padding n'augmente pas la taille totale */
+}
+
+input {
+    width: 250px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+button {
+    /* Style du bouton "Ajouter à la liste" */
+    background-color: #ff7b7b;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #ffd166;
+    color: #121212;
+}
+
+/* =========================================================
+   STYLES DE LA LISTE DE HÉROS
+   ========================================================= */
+
+/* Conteneur principal qui affiche les cartes */
+#heroesList {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
+    gap: 20px; /* Espace entre les cartes */
+    margin-top: 20px;
+}
+
+/* Style de chaque carte de héros */
+.hero-card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1); /* Ombre légère */
+    border: 1px solid #444; /* Bordure discrète */
+}
+
+.hero-card h4 {
+    margin-top: 0;
+    color: #ffd166;
+}
+
+.hero-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Style spécifique du bouton de suppression */
+.delete-btn {
+    background-color: #c0392b; /* Rouge plus sombre */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+}
