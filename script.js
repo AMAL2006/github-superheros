@@ -80,4 +80,21 @@ function deleteHero(id) {
     localStorage.setItem("heroes", JSON.stringify(nouvelleListe));
     displayHeroes(nouvelleListe);
 }
+
+// Gestion de la barre de recherche des héros
+document.getElementById("searchHeroInput").addEventListener("input", function(evenement) {
+    let texte = evenement.target.value.toLowerCase(); // On passe en minuscules pour simplifier 
+    let liste = JSON.parse(localStorage.getItem("heroes")) || []; // On récupère la liste actuelle depuis le stockage local
+    
+    // On filtre par nom, pouvoir ou ville
+    let filtre = liste.filter(heros => 
+        heros.name.toLowerCase().includes(texte) || 
+        heros.power.toLowerCase().includes(texte) ||
+        heros.city.toLowerCase().includes(texte)
+    );
+    
+    displayHeroes(filtre); // On met à jour l'affichage avec seulement les résultats filtrés
+});
+
+// Charger les héros au démarrage
 loadHeroes();
