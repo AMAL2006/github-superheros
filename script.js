@@ -1,7 +1,12 @@
 // Fonction pour charger les héros
 async function loadHeroes() {
     const container = document.getElementById("heroesList");
-    
+     // Barre de chargement (UX)
+    container.innerHTML = "<p id='chargement'>Chargement en cours...</p>";
+
+    // Petit délai pour montrer qu'on gère l'asynchronisme
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
     // On regarde si on a déjà des données
     let herosSauvegardes = localStorage.getItem("heroes");
 
