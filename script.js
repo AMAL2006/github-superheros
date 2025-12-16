@@ -33,7 +33,7 @@ function displayHeroes(liste) {
 
         let imageTag = "";
         if (h.image && h.image !== "") {
-            const urlImage = "https://corsproxy.io/?" + encodeURIComponent(h.image);
+            const urlImage = "https://corsproxy.io/?" + encodeURIComponent(h.image); // utilisation de l'ia 
             imageTag = `<img src="${urlImage}" style="width:100%">`;
         }
 
@@ -75,3 +75,4 @@ function deleteHero(id) {
     localStorage.setItem("heroes", JSON.stringify(nouvelleListe));
     displayHeroes(nouvelleListe);
 }
+loadHeroes();
