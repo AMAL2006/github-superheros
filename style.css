@@ -1,94 +1,70 @@
-/* =========================================================
-   STYLE GÉNÉRAL
-   ========================================================= */
 body {
-    /* Fond sombre pour un thème 'dark' */
-    font-family: Arial, sans-serif;
-    background-color: #121212; 
-    color: #ffffff;
+    background-color: #1a1a2e;
+    color: #eeeeee;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
 h1, h2 {
-    /* Couleur vive pour les titres (souvent utilisée pour l'accentuation) */
-    color: #ffd166; 
+    color: #ff7e67; 
+    text-align: center;
 }
 
-/* =========================================================
-   STYLES DES FORMULAIRES ET INPUTS
-   ========================================================= */
-input, button {
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 5px;
-    border: none;
-    box-sizing: border-box; /* Assure que le padding n'augmente pas la taille totale */
+section {
+    background-color: #16213e;
+    border: 1px solid #0f3460;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 input {
-    width: 250px;
-    background-color: #333333;
-    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #0f3460;
+    background: #1a1a2e;
+    color: white;
 }
 
 button {
-    /* Style du bouton "Ajouter à la liste" */
-    background-color: #ff7b7b;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-button:hover {
-    background-color: #ffd166;
-    color: #121212;
-}
-
-/* =========================================================
-   STYLES DE LA LISTE DE HÉROS
-   ========================================================= */
-
-/* Conteneur principal qui affiche les cartes */
-#heroesList {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
-    gap: 20px; /* Espace entre les cartes */
-    margin-top: 20px;
-}
-
-/* Style de chaque carte de héros */
-.hero-card {
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.1); /* Ombre légère */
-    border: 1px solid #444; /* Bordure discrète */
-}
-
-.hero-card h4 {
-    margin-top: 0;
-    color: #ffd166;
-}
-
-.hero-card p {
-    margin: 5px 0;
-    font-size: 0.9em;
-}
-
-/* Style spécifique du bouton de suppression */
-.delete-btn {
-    background-color: #c0392b; /* Rouge plus sombre */
+    background-color: #ff7e67;
     color: white;
     border: none;
-    padding: 8px 12px;
-    cursor: pointer;
+    padding: 10px 15px;
     border-radius: 4px;
-    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.delete-btn:hover {
-    background-color: #e74c3c;
-    color: white;
+#heroesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hero-card {
+    background-color: #0f3460;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.hero-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }

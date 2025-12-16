@@ -1,30 +1,67 @@
-// ========================================
-// 🎯 INSTRUCTIONS
-// ========================================
-// 1. Changez l'ID du héros ci-dessous
-// 2. Personnalisez l'affichage HTML
-// 3. Ajoutez du CSS dans index.html si vous voulez
-// 4. Faites des commits réguliers !
-// ========================================
+// Fonction pour charger les héros
+async function loadHeroes() {
+    const container = document.getElementById("heroesList");
+    
+    // On regarde si on a déjà des données
+    let herosSauvegardes = localStorage.getItem("heroes");
 
-const heroId = 620; // 👈 CHANGEZ CET ID !
+    if (herosSauvegardes) {
+        // Si oui on les affiche
+        displayHeroes(JSON.parse(herosSauvegardes));
+    } else {
+        // Sinon on lit le fichier JSON
+        try {
+            const reponse = await fetch("heroes.json");
+            const data = await reponse.json();
+            // On sauvegarde dans le storage
+            localStorage.setItem("heroes", JSON.stringify(data));
+            displayHeroes(data);
+        } catch (e) {
+            container.innerHTML = "Erreur de chargement";
+        }
+    }
+}
 
-// Liste des IDs disponibles :
-// Spider-Man: 620, Batman: 70, Iron Man: 346, Superman: 644
-// Wonder Woman: 720, Hulk: 332, Thor: 659, Flash: 263
-const myToken = ""; // Ajoutez le token donné dans le cours
-const apiUrl = `https://superheroapi.com/api.php/${myToken}/${heroId}`;
+// Fonction pour afficher les cartes
+function displayHeroes(liste) {
+    const container = document.getElementById("heroesList");
+    container.innerHTML = "";
 
-// Récupérer les données du héros avec fetch()
-// et les afficher grâce à Javascript dans le HTML de cette manière :
+    liste.forEach(h => {
+        const carte = document.createElement("div");
+        carte.className = "hero-card";
 
-{{/* <h2>${data.name}</h2>
-<img src="${heroImageUrl}" alt="${data.name}" height="200">
-<p><strong>Nom complet :</strong> ${data.biography['full-name']}</p>
-<p><strong>Éditeur :</strong> ${data.biography.publisher}</p>
-<p><strong>Intelligence :</strong> ${data.powerstats.intelligence}/100</p>
-<p><strong>Force :</strong> ${data.powerstats.strength}/100</p> */}}
+        let imageTag = "";
+        if (h.image && h.image !== "") {
+            const urlImage = "https://corsproxy.io/?" + encodeURIComponent(h.image);
+            imageTag = `<img src="${urlImage}" style="width:100%">`;
+        }
 
-// utilisez heroImageUrl = "https://corsproxy.io/?" + encodeURIComponent(data.image.url);
+        carte.innerHTML = `
+            ${imageTag}
+            <h3>${h.name}</h3>
+            <p>Pouvoir: ${h.power}</p>
+            <p>Ville: ${h.city}</p>
+        `;
+        container.appendChild(carte);
+    });
+}
 
-// N'oubliez pas de gérer les erreurs (avec .catch())
+// Ajouter un héros
+document.getElementById("addHeroForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const nouveau = {
+        id: Date.now(),
+        name: document.getElementById("heroName").value,
+        power: document.getElementById("heroPower").value,
+        city: document.getElementById("heroCity").value,
+        image: "" 
+    };
+
+    let liste = JSON.parse(localStorage.getItem("heroes")) || [];
+    liste.push(nouveau);
+    localStorage.setItem("heroes", JSON.stringify(liste));
+    displayHeroes(liste);
+    this.reset();
+});

@@ -1,20 +1,29 @@
 [
   {
-    "id": 1,
-    "name": "Superwoman",
-    "power": "Vol, force surhumaine",
-    "city": "Metropolis"
+    "id": 720,
+    "name": "Wonder Woman",
+    "full-name": "Diana Prince",
+    "power": "Force: 100, Combat: 100",
+    "city": "Themyscira",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/807.jpg",
+    "publisher": "DC Comics"
   },
   {
-    "id": 2,
-    "name": "Batman",
-    "power": "Intelligence, gadgets",
-    "city": "Gotham"
+    "id": 346,
+    "name": "Iron Man",
+    "full-name": "Tony Stark",
+    "power": "Intelligence: 100, Force: 85",
+    "city": "Seattle, Washington",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/85.jpg",
+    "publisher": "Marvel Comics"
   },
   {
-    "id": 3,
-    "name": "Spider-Man",
-    "power": "Toile, sens d'araignée",
-    "city": "New York"
+    "id": 263,
+    "name": "Flash",
+    "full-name": "Jay Garrick",
+    "power": "Vitesse: 100, Endurance: 50",
+    "city": "Keystone City, Kansas",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/891.jpg",
+    "publisher": "DC Comics"
   }
 ]
