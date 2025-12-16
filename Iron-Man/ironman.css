@@ -1,0 +1,123 @@
+.top {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, rgb(70, 0, 0), rgb(134, 30, 30));
+    border-style: dotted;
+    border-color: red;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(234, 0, 0);
+    margin: 0;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(216, 137, 0);
+    margin-top: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.hero-card {
+    background: linear-gradient(135deg, rgb(70, 0, 0), rgb(134, 30, 30));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 500px;
+    border: 2px dotted rgb(234, 0, 0);
+    box-shadow: 0 0 20px rgba(234, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hero-card h2 {
+    color: rgb(216, 137, 0);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-card img {
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 2px solid rgb(216, 137, 0);
+    box-shadow: 0 0 15px rgba(216, 137, 0, 0.4);
+}
+
+.hero-details {
+    text-align: left;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(134, 30, 30);
+}
+
+.hero-details p {
+    margin: 10px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(234, 0, 0, 0.3);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.hero-details strong {
+    color: rgb(216, 137, 0);
+}
+
+#hero-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Animation subtile au survol */
+.hero-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 25px rgba(234, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top {
+        width: 95%;
+        margin-top: 10px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-card {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
