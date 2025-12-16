@@ -42,6 +42,8 @@ function displayHeroes(liste) {
             <h3>${h.name}</h3>
             <p>Pouvoir: ${h.power}</p>
             <p>Ville: ${h.city}</p>
+            <button onclick="deleteHero(${h.id})">Supprimer</button>
+
         `;
         container.appendChild(carte);
     });
@@ -65,3 +67,11 @@ document.getElementById("addHeroForm").addEventListener("submit", function(e) {
     displayHeroes(liste);
     this.reset();
 });
+
+// Supprimer un héros
+function deleteHero(id) {
+    let liste = JSON.parse(localStorage.getItem("heroes"));
+    let nouvelleListe = liste.filter(h => h.id !== id);
+    localStorage.setItem("heroes", JSON.stringify(nouvelleListe));
+    displayHeroes(nouvelleListe);
+}
